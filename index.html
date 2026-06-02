@@ -472,6 +472,21 @@
         .hamburger.active span:nth-child(3) {
             transform: rotate(-45deg) translate(6px, -6px);
         }
+        /* =========================================
+        MOBILE NAVBAR FIX - PASTE AT THE VERY END
+        ========================================= */
+        @media (max-width: 992px) {
+            .navbar {
+                position: fixed !important; /* Forces it to stick on mobile */
+                width: 100%;
+                left: 0;
+                top: 0;
+                z-index: 9999; /* Keeps it above everything else */
+            }
+            .hero { 
+                margin-top: 80px !important; /* 80px matches your navbar height */
+            }
+        }
 
         /* ============================================
            HERO SECTION
