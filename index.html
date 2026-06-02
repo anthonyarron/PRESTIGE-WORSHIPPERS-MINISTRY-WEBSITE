@@ -2334,6 +2334,18 @@
         .text-center { text-align: center; }
         .mt-0 { margin-top: 0; }
         .mb-0 { margin-bottom: 0; }
+
+        /* =========================================
+        FIX MOBILE MENU OVERFLOW (CUT OFF BUTTON)
+        ========================================= */
+        @media (max-width: 992px) {
+            .nav-menu {
+                overflow-y: auto !important;
+                -webkit-overflow-scrolling: touch; 
+                max-height: 100vh !important; 
+                padding-bottom: 50px !important; 
+            }
+        }
     </style>
 </head>
 <body>
