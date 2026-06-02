@@ -1,0 +1,3613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prestige Worshippers Ministry — Love • Care • Transform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* ============================================
+           CSS RESET & BASE STYLES
+           ============================================ */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #0B2A47;
+            --navy-dark: #061A2E;
+            --navy-light: #123D66;
+            --red: #E61E23;
+            --red-dark: #C4181C;
+            --red-light: #FF3338;
+            --black: #000000;
+            --white: #FFFFFF;
+            --gray-100: #F7F8FA;
+            --gray-200: #E8ECF1;
+            --gray-300: #CBD2DC;
+            --gray-400: #9AA5B4;
+            --gray-500: #6B7A8D;
+            --gray-600: #4A5568;
+            --gold: #D4A843;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Poppins', sans-serif;
+            --font-accent: 'Montserrat', sans-serif;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+            --shadow-md: 0 8px 30px rgba(0,0,0,0.12);
+            --shadow-lg: 0 20px 60px rgba(0,0,0,0.15);
+            --shadow-xl: 0 30px 80px rgba(0,0,0,0.2);
+            --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--gray-600);
+            line-height: 1.7;
+            overflow-x: hidden;
+            background: var(--white);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul { list-style: none; }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ============================================
+           PRELOADER
+           ============================================ */
+        .preloader {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: var(--navy);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
+        }
+
+        .preloader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .preloader-content {
+            text-align: center;
+        }
+
+        .preloader-cross {
+            font-size: 48px;
+            color: var(--red);
+            animation: pulse-loader 1.2s ease-in-out infinite;
+            display: flex;
+        }
+        .preloader-cross img {
+           width: 10%;
+           height: 10%;
+           object-fit: contain;
+           display: block;
+           justify-content: center;
+           display: block;
+           align-items: center;
+           background: transparent;  
+           margin-left: auto;
+           margin-right: auto; 
+        }
+
+        .preloader-text {
+            font-family: var(--font-accent);
+            color: var(--white);
+            font-size: 20px;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            margin-top: 20px;
+            opacity: 0.7;
+            font-weight: bold;
+        }
+
+        @keyframes pulse-loader {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.6; }
+        }
+
+        /* ============================================
+           SCROLL REVEAL ANIMATIONS
+           ============================================ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-60px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(60px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal-right.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* ============================================
+           TOP HEADER BAR
+           ============================================ */
+        .top-header {
+            background: var(--navy-dark);
+            padding: 10px 0;
+            font-size: 13px;
+            color: rgba(255,255,255,0.75);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            position: relative;
+            z-index: 1001;
+        }
+
+        .top-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .top-header-left {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .top-header-left a {
+            color: rgba(255,255,255,0.75);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .top-header-left a:hover {
+            color: var(--red);
+        }
+
+        .top-header-left i {
+            font-size: 12px;
+            color: var(--red);
+        }
+
+        .top-header-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .top-header-right .service-reminder {
+            color: var(--gold);
+            font-weight: 500;
+            font-size: 12px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .top-header-right .service-reminder i {
+            animation: pulse-dot 2s infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .social-icons-top {
+            display: flex;
+            gap: 12px;
+        }
+
+        .social-icons-top a {
+            color: rgba(255,255,255,0.6);
+            font-size: 14px;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            border: 1px solid rgba(255,255,255,0.15);
+            transition: var(--transition);
+        }
+
+        .social-icons-top a:hover {
+            background: var(--red);
+            color: var(--white);
+            border-color: var(--red);
+            transform: translateY(-2px);
+        }
+
+        /* ============================================
+           STICKY NAVIGATION
+           ============================================ */
+        .navbar {
+            position: sticky;
+            top: 0;
+            background: rgba(255,255,255,0.97);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 1000;
+            transition: var(--transition);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .navbar.scrolled {
+            box-shadow: var(--shadow-md);
+            padding: 0;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 1001;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--navy), var(--navy-light));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+            position: relative;
+            z-index: 2; 
+        }
+
+        .logo-icon::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.15) 50%, transparent 60%);
+            animation: logo-shine 3s ease-in-out infinite;
+            z-index: 1; 
+            pointer-events: none;
+        }
+
+        @keyframes logo-shine {
+            0% { transform: translateX(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) rotate(45deg); }
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-text .church-name {
+            font-family: var(--font-accent);
+            font-size: 16px;
+            font-weight: 800;
+            color: var(--navy);
+            letter-spacing: 1px;
+            line-height: 1.2;
+        }
+
+        .logo-text .church-tagline {
+            font-size: 10px;
+            color: var(--red);
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .nav-menu a {
+            padding: 8px 16px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--navy);
+            border-radius: 8px;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--red);
+            transition: var(--transition);
+            border-radius: 2px;
+        }
+
+        .nav-menu a:hover::after,
+        .nav-menu a.active::after {
+            width: 24px;
+        }
+
+        .nav-menu a:hover {
+            color: var(--red);
+        }
+
+        .nav-menu a.active {
+            color: var(--red);
+        }
+
+        .nav-cta {
+            background: linear-gradient(135deg, var(--red), var(--red-dark));
+            color: var(--white) !important;
+            padding: 10px 28px !important;
+            border-radius: 50px !important;
+            font-weight: 600 !important;
+            font-size: 12px !important;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(230, 30, 35, 0.35);
+            transition: var(--transition);
+        }
+        .nav-cta-support {
+            background: var(--navy-dark);
+            color: var(--white) !important;
+            padding: 10px 28px !important;
+            border-radius: 50px !important;
+            font-weight: 600 !important;
+            font-size: 10px !important;
+            letter-spacing: 0.5px;
+            box-shadow: 1px solid rgba(255,255,255,0.08);
+            transition: var(--transition);
+        }
+
+        .nav-cta::after { display: none !important; }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(230, 30, 35, 0.45);
+            color: var(--white) !important;
+        }
+        .nav-cta-support::after { display: none !important; }
+
+        .nav-cta-support:hover {
+            transform: translateY(-2px);
+            box-shadow: 1px solid rgba(255,255,255,0.08);
+            color: var(--white) !important;
+        }
+
+        /* Hamburger */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 6px;
+            z-index: 1001;
+            padding: 8px;
+        }
+
+        .hamburger span {
+            width: 28px;
+            height: 2.5px;
+            background: var(--navy);
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        /* ============================================
+           HERO SECTION
+           ============================================ */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 700px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: url('../people2.jpeg') center/cover no-repeat;
+            transform: scale(1.05);
+            animation: hero-zoom 20s ease-in-out infinite alternate;
+        }
+
+        @keyframes hero-zoom {
+            0% { transform: scale(1.05); }
+            100% { transform: scale(1.15); }
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: linear-gradient(
+                180deg,
+                rgba(11, 42, 71, 0.85) 0%,
+                rgba(11, 42, 71, 0.7) 40%,
+                rgba(11, 42, 71, 0.6) 70%,
+                rgba(11, 42, 71, 0.9) 100%
+            );
+        }
+
+        .hero-particles {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 50%;
+            animation: float-particle linear infinite;
+        }
+
+        @keyframes float-particle {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-10vh) rotate(720deg); opacity: 0; }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            max-width: 900px;
+            padding: 0 24px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.15);
+            padding: 8px 24px;
+            border-radius: 50px;
+            font-size: 13px;
+            color: var(--gold);
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 28px;
+            animation: fadeInDown 1s ease 0.3s both;
+        }
+
+        .hero-badge i {
+            animation: pulse-dot 2s infinite;
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            color: var(--white);
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease 0.5s both;
+        }
+
+        .hero h1 span {
+            color: var(--red);
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-theme {
+            font-family: var(--font-accent);
+            font-size: clamp(1rem, 2.5vw, 1.5rem);
+            color: var(--gold);
+            font-weight: 600;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            animation: fadeInUp 1s ease 0.7s both;
+        }
+
+        .hero-text {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.8);
+            max-width: 650px;
+            margin: 0 auto 40px;
+            line-height: 1.8;
+            animation: fadeInUp 1s ease 0.9s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease 1.1s both;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 36px;
+            border-radius: 50px;
+            font-family: var(--font-accent);
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            border: none;
+            transition: var(--transition);
+            text-transform: uppercase;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--red), var(--red-dark));
+            color: var(--white);
+            box-shadow: 0 6px 25px rgba(230, 30, 35, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 35px rgba(230, 30, 35, 0.5);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255,255,255,0.4);
+            backdrop-filter: blur(5px);
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--navy);
+            border-color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        .hero-scroll {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            animation: fadeInUp 1s ease 1.5s both;
+        }
+
+        .scroll-indicator {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            color: rgba(255,255,255,0.6);
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .scroll-mouse {
+            width: 26px;
+            height: 40px;
+            border: 2px solid rgba(255,255,255,0.4);
+            border-radius: 13px;
+            position: relative;
+        }
+
+        .scroll-mouse::after {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3px;
+            height: 8px;
+            background: var(--white);
+            border-radius: 3px;
+            animation: scroll-bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes scroll-bounce {
+            0%, 100% { top: 8px; opacity: 1; }
+            50% { top: 20px; opacity: 0.3; }
+        }
+        @media (max-width: 768px) {
+             .hero-scroll {
+                bottom: 5px;
+             }
+        }
+
+        /* ============================================
+           SECTION STYLES
+           ============================================ */
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-dark {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .section-light {
+            background: var(--gray-100);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-accent);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--red);
+            margin-bottom: 16px;
+        }
+
+        .section-label::before,
+        .section-label::after {
+            content: '';
+            width: 30px;
+            height: 1.5px;
+            background: var(--red);
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--navy);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .section-dark .section-title {
+            color: var(--white);
+        }
+
+        .section-subtitle {
+            font-size: 1.05rem;
+            color: var(--gray-500);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .section-dark .section-subtitle {
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* ============================================
+           ABOUT SECTION
+           ============================================ */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-images {
+            position: relative;
+        }
+
+        .about-img-main {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            height: 550px; 
+        }
+
+        .about-img-main img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+        }
+
+        .about-img-float {
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            width: 200px;
+            height: 200px;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 6px solid var(--white);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .about-img-float img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-experience {
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            background: linear-gradient(135deg, var(--red), var(--red-dark));
+            color: var(--white);
+            padding: 20px 24px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(230, 30, 35, 0.3);
+        }
+
+        .about-experience .number {
+            font-family: var(--font-heading);
+            font-size: 36px;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .about-experience .label {
+            font-size: 11px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            opacity: 0.9;
+        }
+
+        .about-content .section-label {
+            justify-content: flex-start;
+        }
+
+        .about-content .section-label::before { display: none; }
+
+        .about-content .section-title {
+            text-align: left;
+        }
+
+        .about-text {
+            font-size: 1rem;
+            color: var(--gray-500);
+            line-height: 1.9;
+            margin-bottom: 24px;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .about-feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--navy);
+        }
+
+        .about-feature i {
+            color: var(--red);
+            font-size: 14px;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(230, 30, 35, 0.08);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .mission-vision {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        .mv-card {
+            padding: 24px;
+            border-radius: 16px;
+            border: 1px solid rgba(0,0,0,0.06);
+            transition: var(--transition);
+        }
+
+        .mv-card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-4px);
+        }
+
+        .mv-card h4 {
+            font-family: var(--font-accent);
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--red);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .mv-card p {
+            font-size: 14px;
+            color: var(--gray-500);
+            line-height: 1.7;
+        }
+
+        /* ============================================
+           CORE VALUES
+           ============================================ */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .value-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .value-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 3px;
+            background: linear-gradient(90deg, var(--red), var(--gold));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: var(--transition);
+        }
+
+        .value-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .value-card:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .value-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, rgba(230, 30, 35, 0.15), rgba(230, 30, 35, 0.05));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 28px;
+            color: var(--red);
+            transition: var(--transition);
+        }
+
+        .value-card:hover .value-icon {
+            background: linear-gradient(135deg, var(--red), var(--red-dark));
+            color: var(--white);
+            transform: scale(1.1);
+        }
+
+        .value-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            color: var(--white);
+            margin-bottom: 12px;
+        }
+
+        .value-card p {
+            font-size: 14px;
+            color: rgba(255,255,255,0.55);
+            line-height: 1.7;
+        }
+
+        /* ============================================
+           SERVICE TIMES
+           ============================================ */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 36px 30px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(0,0,0,0.04);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--navy), var(--red));
+            transform: scaleX(0);
+            transition: var(--transition);
+        }
+
+        .service-card:hover::after {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-card.featured {
+            background: linear-gradient(135deg, var(--navy), var(--navy-light));
+            color: var(--white);
+        }
+
+        .service-card.featured .service-time,
+        .service-card.featured .service-day {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(230, 30, 35, 0.08);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 24px;
+            color: var(--red);
+        }
+
+        .service-card.featured .service-icon {
+            background: rgba(255,255,255,0.1);
+            color: var(--gold);
+        }
+
+        .service-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            color: var(--navy);
+            margin-bottom: 8px;
+        }
+
+        .service-card.featured h3 { color: var(--white); }
+
+        .service-day {
+            font-size: 13px;
+            color: var(--gray-400);
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+        .service-time {
+            font-family: var(--font-accent);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 4px;
+        }
+
+        .service-card.featured .service-time { color: var(--gold); }
+
+        .service-note {
+            font-size: 12px;
+            color: var(--gray-400);
+            margin-top: 8px;
+        }
+
+        /* ============================================
+           SERMONS SECTION
+           ============================================ */
+        .sermons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 30px;
+        }
+
+        .sermon-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(0,0,0,0.04);
+            transition: var(--transition);
+        }
+
+        .sermon-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .sermon-video {
+            position: relative;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+            background: var(--navy);
+        }
+
+        .sermon-video iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .sermon-video-placeholder {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .sermon-card:hover .sermon-video-placeholder {
+            transform: scale(1.05);
+        }
+
+        .play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70px;
+            height: 70px;
+            background: rgba(230, 30, 35, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 24px;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 8px 25px rgba(230, 30, 35, 0.4);
+        }
+
+        .play-btn:hover {
+            transform: translate(-50%, -50%) scale(1.1);
+            background: var(--red);
+        }
+
+        .sermon-info {
+            padding: 24px;
+        }
+
+        .sermon-meta {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 12px;
+            font-size: 12px;
+            color: var(--gray-400);
+        }
+
+        .sermon-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .sermon-meta i {
+            color: var(--red);
+        }
+
+        .sermon-info h3 {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            color: var(--navy);
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .sermon-preacher {
+            font-size: 14px;
+            color: var(--red);
+            font-weight: 500;
+        }
+
+        .sermon-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 16px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--navy);
+            padding: 10px 24px;
+            background: rgba(11, 42, 71, 0.06);
+            border-radius: 50px;
+            transition: var(--transition);
+        }
+
+        .sermon-btn:hover {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        /* ============================================
+           EVENTS SECTION
+           ============================================ */
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .event-card {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px;
+            padding: 30px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .event-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--red), var(--gold));
+            border-radius: 4px;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .event-card:hover::before {
+            opacity: 1;
+        }
+
+        .event-card:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .event-date {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .event-date-box {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--red), var(--red-dark));
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            flex-shrink: 0;
+        }
+
+        .event-date-box .day {
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .event-date-box .month {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.9;
+        }
+
+        .event-date-info .month-year {
+            font-size: 13px;
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        .event-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            color: var(--white);
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .event-card p {
+            font-size: 13px;
+            color: rgba(255,255,255,0.5);
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .event-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--red);
+            transition: var(--transition);
+        }
+
+        .event-link:hover {
+            color: var(--gold);
+            gap: 10px;
+        }
+
+        /* ============================================
+           MINISTRIES SECTION
+           ============================================ */
+        .ministries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+        }
+
+        .ministry-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(0,0,0,0.04);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .ministry-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .ministry-img {
+            height: 180px;
+            overflow: hidden;
+        }
+
+        .ministry-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .ministry-card:hover .ministry-img img {
+            transform: scale(1.1);
+        }
+
+        .ministry-content {
+            padding: 24px 20px;
+        }
+
+        .ministry-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(230, 30, 35, 0.08);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: -48px auto 16px;
+            font-size: 20px;
+            color: var(--red);
+            position: relative;
+            z-index: 2;
+            box-shadow: var(--shadow-md);
+            background: var(--white);
+            border: 3px solid var(--white);
+        }
+
+        .ministry-card:hover .ministry-icon {
+            background: linear-gradient(135deg, var(--red), var(--red-dark));
+            color: var(--white);
+        }
+
+        .ministry-content h3 {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            color: var(--navy);
+            margin-bottom: 8px;
+        }
+
+        .ministry-content p {
+            font-size: 13px;
+            color: var(--gray-400);
+            line-height: 1.6;
+        }
+
+        /* ============================================
+           GALLERY SECTION
+           ============================================ */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: 250px;
+            gap: 16px;
+        }
+
+        .gallery-item {
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .gallery-item:nth-child(1) {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        .gallery-item:nth-child(4) {
+            grid-column: span 2;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: linear-gradient(180deg, transparent 40%, rgba(11, 42, 71, 0.8) 100%);
+            opacity: 0;
+            transition: var(--transition);
+            display: flex;
+            align-items: flex-end;
+            padding: 24px;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay span {
+            color: var(--white);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .gallery-overlay i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            color: var(--white);
+            font-size: 32px;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-overlay i {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        /* ============================================
+           TESTIMONIALS SECTION
+           ============================================ */
+        .testimonials-wrapper {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .testimonials-track {
+            display: flex;
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .testimonial-slide {
+            min-width: 100%;
+            padding: 0 20px;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 48px 40px;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            font-family: var(--font-heading);
+            font-size: 120px;
+            color: rgba(230, 30, 35, 0.08);
+            position: absolute;
+            top: -10px;
+            left: 30px;
+            line-height: 1;
+        }
+
+        .testimonial-text {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            color: var(--navy);
+            line-height: 1.8;
+            font-style: italic;
+            margin-bottom: 28px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        .testimonial-avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0; 
+        }
+
+        .testimonial-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+            display: block;
+        }
+
+        .testimonial-info h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        .testimonial-info span {
+            font-size: 13px;
+            color: var(--gray-400);
+        }
+
+        .testimonial-stars {
+            color: var(--gold);
+            font-size: 14px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 4px;
+        }
+
+        .testimonials-nav {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 32px;
+        }
+
+        .testimonials-nav button {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: 2px solid rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.05);
+            color: var(--white);
+            font-size: 16px;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .testimonials-nav button:hover {
+            background: var(--red);
+            border-color: var(--red);
+        }
+
+        .testimonials-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 24px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.2);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .dot.active {
+            background: var(--red);
+            width: 30px;
+            border-radius: 5px;
+        }
+
+        /* ============================================
+           CTA SECTION
+           ============================================ */
+        .cta-section {
+            position: relative;
+            padding: 120px 0;
+            overflow: hidden;
+        }
+
+        .cta-bg {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: url('../worship.jpeg') center/cover no-repeat;
+        }
+
+        .cta-overlay {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: linear-gradient(135deg, rgba(11, 42, 71, 0.92), rgba(11, 42, 71, 0.85));
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-content .section-label {
+            color: var(--gold);
+        }
+
+        .cta-content .section-label::before,
+        .cta-content .section-label::after {
+            background: var(--gold);
+        }
+
+        .cta-content h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            color: var(--white);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .cta-content p {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 36px;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* ============================================
+           CONTACT SECTION
+           ============================================ */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+        }
+
+        .contact-info h3 {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            color: var(--navy);
+            margin-bottom: 16px;
+        }
+
+        .contact-info > p {
+            color: var(--gray-500);
+            margin-bottom: 32px;
+            line-height: 1.8;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 32px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .contact-item-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(230, 30, 35, 0.08);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--red);
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .contact-item-text h4 {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 4px;
+        }
+
+        .contact-item-text p,
+        .contact-item-text a {
+            font-size: 14px;
+            color: var(--gray-500);
+        }
+
+        .contact-item-text a:hover {
+            color: var(--red);
+        }
+
+        .contact-social {
+            display: flex;
+            gap: 12px;
+        }
+
+        .contact-social a {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: var(--navy);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            transition: var(--transition);
+        }
+
+        .contact-social a:hover {
+            background: var(--red);
+            transform: translateY(-3px);
+        }
+
+        .contact-form-wrapper {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+
+        .contact-form-wrapper h3 {
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            color: var(--navy);
+            margin-bottom: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid var(--gray-200);
+            border-radius: 12px;
+            font-family: var(--font-body);
+            font-size: 14px;
+            color: var(--navy);
+            transition: var(--transition);
+            background: var(--gray-100);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--red);
+            background: var(--white);
+            box-shadow: 0 0 0 4px rgba(230, 30, 35, 0.1);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, var(--red), var(--red-dark));
+            color: var(--white);
+            border: none;
+            border-radius: 12px;
+            font-family: var(--font-accent);
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .form-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(230, 30, 35, 0.4);
+        }
+
+        .map-placeholder {
+            margin-top: 48px;
+            border-radius: 20px;
+            overflow: hidden;
+            height: 300px;
+            background: var(--gray-200);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-400);
+            font-size: 14px;
+            gap: 8px;
+        }
+
+        .map-placeholder i {
+            font-size: 24px;
+            color: var(--red);
+        }
+       .map-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px; 
+            background: #f0f0f0; 
+        }
+
+        .map-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .map-container.reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .map-container.reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ============================================
+           FOOTER
+           ============================================ */
+        .footer {
+            background: var(--navy-dark);
+            color: var(--white);
+            padding: 80px 0 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 48px;
+            padding-bottom: 60px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .footer-brand .logo-text .church-name {
+            color: var(--white);
+        }
+
+        .footer-brand p {
+            font-size: 14px;
+            color: rgba(255,255,255,0.5);
+            line-height: 1.8;
+            margin-top: 16px;
+            margin-bottom: 24px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 10px;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.06);
+            color: rgba(255,255,255,0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            transition: var(--transition);
+        }
+
+        .footer-social a:hover {
+            background: var(--red);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        .footer h4 {
+            font-family: var(--font-accent);
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--white);
+            margin-bottom: 24px;
+        }
+
+        .footer-links a {
+            display: block;
+            font-size: 14px;
+            color: rgba(255,255,255,0.5);
+            padding: 6px 0;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--red);
+            padding-left: 8px;
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 16px;
+            font-size: 14px;
+            color: rgba(255,255,255,0.5);
+        }
+
+        .footer-contact-item i {
+            color: var(--red);
+            margin-top: 3px;
+            font-size: 14px;
+        }
+
+        .footer-contact-item a {
+            color: rgba(255,255,255,0.5);
+        }
+
+        .footer-contact-item a:hover {
+            color: var(--red);
+        }
+
+        .footer-bottom {
+            padding: 24px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .footer-bottom p {
+            font-size: 13px;
+            color: rgba(255,255,255,0.4);
+        }
+
+        .footer-bottom .theme-statement {
+            font-family: var(--font-accent);
+            font-size: 13px;
+            color: var(--gold);
+            font-weight: 600;
+            letter-spacing: 3px;
+        }
+
+        /* ============================================
+           BACK TO TOP
+           ============================================ */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--red), var(--red-dark));
+            color: var(--white);
+            border: none;
+            border-radius: 14px;
+            font-size: 18px;
+            cursor: pointer;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: var(--transition);
+            box-shadow: 0 8px 25px rgba(230, 30, 35, 0.35);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 35px rgba(230, 30, 35, 0.5);
+        }
+
+        /* ============================================
+           RESPONSIVE DESIGN
+           ============================================ */
+        @media (max-width: 1024px) {
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 320px;
+                height: 100vh;
+                background: var(--white);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 8px;
+                transition: right 0.4s ease;
+                box-shadow: -10px 0 40px rgba(0,0,0,0.1);
+                z-index: 1000;
+            }
+
+            .nav-menu.open {
+                right: 0;
+            }
+
+            .nav-menu a {
+                font-size: 16px;
+                padding: 12px 24px;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .about-img-float {
+                right: 10px;
+                bottom: -20px;
+                width: 150px;
+                height: 150px;
+            }
+
+            .about-experience {
+                left: 10px;
+                top: -10px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-auto-rows: 200px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-header-left {
+                display: none;
+            }
+
+            .top-header .container {
+                justify-content: center;
+            }
+
+            .hero {
+                min-height: 600px;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-theme {
+                font-size: 1rem;
+                letter-spacing: 4px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                padding: 14px 32px;
+                font-size: 13px;
+            }
+
+            .section {
+                padding: 70px 0;
+            }
+
+            .section-header {
+                margin-bottom: 40px;
+            }
+
+            .values-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .sermons-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .events-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .ministries-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+                grid-auto-rows: 180px;
+            }
+
+            .gallery-item:nth-child(1) {
+                grid-column: span 2;
+                grid-row: span 1;
+            }
+
+            .gallery-item:nth-child(4) {
+                grid-column: span 1;
+            }
+
+            .testimonial-card {
+                padding: 32px 24px;
+            }
+
+            .testimonial-text {
+                font-size: 1.1rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form-wrapper {
+                padding: 28px;
+            }
+
+            .about-features {
+                grid-template-columns: 1fr;
+            }
+
+            .mission-vision {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .ministries-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                grid-auto-rows: 200px;
+            }
+
+            .gallery-item:nth-child(1) {
+                grid-column: span 1;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Mobile overlay */
+        .nav-overlay {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .nav-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Utility */
+        .text-center { text-align: center; }
+        .mt-0 { margin-top: 0; }
+        .mb-0 { margin-bottom: 0; }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================
+         PRELOADER
+         ============================================ -->
+<div class="preloader" id="preloader">
+    <div class="preloader-content">
+        <div class="preloader-cross">
+            <img class="preloader-cross img" src="logo.png" alt="Church Logo">
+        </div>
+        <div class="preloader-text">Prestige Worshippers Ministry</div>
+    </div>
+</div>
+
+    <!-- ============================================
+         TOP HEADER BAR
+         ============================================ -->
+    <div class="top-header">
+        <div class="container">
+            <div class="top-header-left">
+                <a href="mailto:prestigeworshippersministry@gmail.com">
+                    <i class="fas fa-envelope"></i> prestigeworshippersministry@gmail.com
+                </a>
+                <a href="tel:+256783577649">
+                    <i class="fas fa-phone"></i> +256 783 577 649   
+                </a>
+            </div>
+            <div class="top-header-right">
+                <div class="service-reminder">
+                    <i class="fas fa-circle" style="font-size:8px"></i>
+                    Sunday Service: 10:00 AM – 1:00 PM
+                </div>
+                <div class="social-icons-top">
+                    <a href="https://facebook.com/prestigeworshippersministry" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://instagram.com/prestigeworshippersministry" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://youtube.com/@prestigeworshippersministr1033" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://tiktok.com/@prestigeworshippers" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================
+         STICKY NAVIGATION
+         ============================================ -->
+ <nav class="navbar" id="navbar">
+    <div class="container">
+        <a href="#" class="nav-logo" aria-label="Home">
+            <div class="logo-icon">
+                <img src="logo.png" alt="Church Logo">
+            </div>
+            <div class="logo-text">
+                <span class="church-name">PRESTIGE WORSHIPPERS</span>
+                <span class="church-tagline">Love • Care • Transform</span>
+            </div>
+        </a>
+
+        <div class="nav-menu" id="navMenu">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#ministries">Ministries</a>
+            <a href="#sermons">Sermons</a>
+            <a href="#events">Events</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact</a>
+            <a href="https://wa.me/256783577649?text=Hi%20I%20clicked%20Join%20Us%20on%20your%20church%20website.%20I%20would%20love%20to%20know%20the%20service%20time%20venue%20and%20how%20I%20can%20join%20this%20Sunday.%20God%20bless%20you%20"
+                    class="nav-cta" 
+                    target="_blank" 
+                    rel="noopener noreferrer">
+                    Join Us
+                    </a>
+            <a href="https://project-donation-rho.vercel.app/"
+                    class="nav-cta-support" 
+                    target="_blank" 
+                    rel="noopener noreferrer">
+                    Support Us
+                    </a>
+        </div>
+
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</nav>
+<div class="nav-overlay" id="navOverlay"></div>
+    <!-- ============================================
+         HERO SECTION
+         ============================================ -->
+    <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-particles" id="heroParticles"></div>
+
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-circle"></i>
+                Welcome to Prestige Worshippers Ministry
+            </div>
+            <h1>Experience God's <span>Unfailing</span> Love</h1>
+            <div class="hero-theme">Love • Care • Transform</div>
+            <p class="hero-text">
+                Join a vibrant community of believers committed to worship, prayer, and transforming lives through the power of God's Word. Everyone is welcome.
+            </p>
+            <div class="hero-buttons">
+                <a href="https://youtube.com/@prestigeworshippersministr1033" target="_blank" class="btn btn-primary">
+                    <i class="fas fa-play"></i> Watch Sermons
+                </a>
+                <a 
+                href="https://www.google.com/maps/search/?api=1&query=PRESTIGE+WORSHIPPERS+MINISTRY+Kireka+Bweyogerere+Uganda" 
+                class="btn btn-outline" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                aria-label="Get directions to Prestige Worshippers Ministry">
+                    <i class="fas fa-map-marker-alt"></i> Visit Us
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-scroll">
+            <div class="scroll-indicator">
+                <div class="scroll-mouse"></div>
+                <span>Scroll</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         ABOUT SECTION
+         ============================================ -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-images reveal-left">
+                    <div class="about-img-main">
+                        <img src="pastor.jpeg" alt="Prestige Worshippers Ministry Congregation">
+                    </div>
+                    <div class="about-img-float">
+                        <img src="sherry2.jpeg" alt="Worship Band">
+                    </div>
+                    <div class="about-experience">
+                        <div class="number">3+</div>
+                        <div class="label">Years of<br>Ministry</div>
+                    </div>
+                </div>
+
+                <div class="about-content reveal-right">
+                    <div class="section-label">About Our Church</div>
+                    <h2 class="section-title">A Place Where Lives Are Transformed</h2>
+                    <p class="about-text">
+                        Prestige Worshippers Ministry is a dynamic, Spirit-filled community dedicated to raising a generation of passionate worshippers and kingdom ambassadors. We believe in the transformative power of God's love, genuine care for every individual, and the Holy Spirit's ability to change lives.
+                    </p>
+                    <p class="about-text">
+                        Our doors are open to everyone — from families and youth to professionals and seekers. We are more than a church; we are a family committed to walking together in faith, hope, and love.
+                    </p>
+
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <i class="fas fa-check"></i>
+                            Spirit-Led Worship
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-check"></i>
+                            Biblical Teaching
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-check"></i>
+                            Community Outreach
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-check"></i>
+                            Youth Empowerment
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-check"></i>
+                            Prayer Ministry
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-check"></i>
+                            Family Values
+                        </div>
+                    </div>
+
+                    <div class="mission-vision">
+                        <div class="mv-card">
+                            <h4><i class="fas fa-bullseye"></i> Our Mission</h4>
+                            <p>To lead people into a growing relationship with Jesus Christ through passionate worship, sound biblical teaching, and loving community.</p>
+                        </div>
+                        <div class="mv-card">
+                            <h4><i class="fas fa-eye"></i> Our Vision</h4>
+                            <p>To be a global ministry known for excellence in worship, transforming lives, and raising kingdom ambassadors who impact their generation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         CORE VALUES SECTION
+         ============================================ -->
+    <section class="section section-dark" id="values">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-label">What We Stand For</div>
+                <h2 class="section-title">Our Core Values</h2>
+                <p class="section-subtitle">These foundational pillars guide everything we do as a ministry and community of believers.</p>
+            </div>
+
+            <div class="values-grid">
+                <div class="value-card reveal">
+                    <div class="value-icon"><i class="fas fa-heart"></i></div>
+                    <h3>Love</h3>
+                    <p>We demonstrate God's unconditional love through genuine relationships, acceptance, and selfless service to one another.</p>
+                </div>
+                <div class="value-card reveal">
+                    <div class="value-icon"><i class="fas fa-hands-helping"></i></div>
+                    <h3>Care</h3>
+                    <p>We are committed to the holistic well-being of every individual — spiritually, emotionally, and physically.</p>
+                </div>
+                <div class="value-card reveal">
+                    <div class="value-icon"><i class="fas fa-arrows-rotate"></i></div>
+                    <h3>Transform</h3>
+                    <p>Through the Word and Spirit, we believe in the complete transformation of lives, families, and communities.</p>
+                </div>
+                <div class="value-card reveal">
+                    <div class="value-icon"><i class="fas fa-music"></i></div>
+                    <h3>Worship</h3>
+                    <p>We create an atmosphere where people encounter God through passionate, Spirit-led worship and praise.</p>
+                </div>
+                <div class="value-card reveal">
+                    <div class="value-icon"><i class="fas fa-pray"></i></div>
+                    <h3>Prayer</h3>
+                    <p>We believe in the power of fervent prayer as the foundation for spiritual growth and breakthrough.</p>
+                </div>
+                <div class="value-card reveal">
+                    <div class="value-icon"><i class="fas fa-users"></i></div>
+                    <h3>Community</h3>
+                    <p>We foster authentic community where everyone belongs, grows, and thrives together in faith.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SERVICE TIMES SECTION
+         ============================================ -->
+    <section class="section section-light" id="services">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-label">Join Us In Worship</div>
+                <h2 class="section-title">Service Times</h2>
+                <p class="section-subtitle">We would love to have you worship with us. Here are our regular service times.</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card featured reveal">
+                    <div class="service-icon"><i class="fas fa-sun"></i></div>
+                    <h3>Sunday Main Service</h3>
+                    <div class="service-day">Every Sunday</div>
+                    <div class="service-time">10:00 AM – 01:00 PM</div>
+                    <div class="service-note">Our central gathering for vibrant prayer, worship, praise and practical biblical teaching</div>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon"><i class="fas fa-sun"></i></div>
+                    <h3>Sunday Early Service</h3>
+                    <div class="service-day">Every Sunday</div>
+                    <div class="service-time">08:00 AM – 10:00 AM</div>
+                    <div class="service-note">A focused, traditional service to start your Sunday with prayer, scripture, and community.</div>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon"><i class="fas fa-moon"></i></div>
+                    <h3>Midweek Fellowship</h3>
+                    <div class="service-day">Tuesday & Thursday</div>
+                    <div class="service-time">06:00 PM – 08:00 PM</div>
+                    <div class="service-note">Connect and study with us every Tuesday and Thursday.Dive deeper into God's Word</div>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon"><i class="fas fa-bolt"></i></div>
+                    <h3>Youth Service</h3>
+                    <div class="service-day">Every Last Sunday of the month</div>
+                    <div class="service-time">04:00 PM – 07:00 PM</div>
+                    <div class="service-note">Empowering the next generation</div>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon"><i class="fas fa-fire"></i></div>
+                    <h3>Special Blazing Prayer</h3>
+                    <div class="service-day">Every First Friday of the month</div>
+                    <div class="service-time">06:00 PM – 11:00 PM</div>
+                    <div class="service-note">Intense night of prayer and intercession</div>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon"><i class="fas fa-fire-flame-curved"></i></div>
+                    <h3>5 Days Blazing Prayer Week</h3>
+                    <div class="service-day">Every Third Week of the Month</div>
+                    <div class="service-time">06:00 PM – 08:00 PM</div>
+                    <div class="service-note">Five consecutive days of passionate heartfelt prayer</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SERMONS SECTION
+         ============================================ -->
+    <section class="section" id="sermons">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-label">God's Word</div>
+                <h2 class="section-title">Latest Sermons</h2>
+                <p class="section-subtitle">Catch up on our recent messages and be inspired by the transformative power of God's Word.</p>
+            </div>
+
+            <div class="sermons-grid">
+                <div class="sermon-card reveal">
+                    <div class="sermon-video">
+                        <img src="the great faith 1.jpeg" alt="Sermon Thumbnail" class="sermon-video-placeholder">
+                        <div class="play-btn" onclick="this.parentElement.innerHTML='<iframe src=\'https://www.youtube.com/embed/TQut92l58Bg?autoplay=1&si=EcbkouukZYSvEDap\' frameborder=\'0\' allow=\'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\' allowfullscreen style=\'width:100%;height:100%;border:0;\'></iframe>'">
+                            <i class="fas fa-play" style="margin-left:3px"></i>
+                        </div>
+                    </div>
+                    <div class="sermon-info">
+                        <div class="sermon-meta">
+                            <span><i class="fas fa-calendar"></i> May 18, 2026</span>
+                            <span><i class="fas fa-clock"></i> 62 min</span>
+                        </div>
+                        <h3>The Great Faith</h3>
+                        <div class="sermon-preacher">Pastor JOHN EVEREST</div>
+                    <a href="https://www.youtube.com/watch?v=TQut92l58Bg" 
+                    class="sermon-btn" 
+                    data-video-id="TQut92l58Bg"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    <i class="fas fa-play-circle"></i> Watch Sermon
+                    </a>
+                    </div>
+                </div>
+
+                <div class="sermon-card reveal">
+                    <div class="sermon-video">
+                        <img src="the great faith 2.jpeg" alt="Sermon Thumbnail" class="sermon-video-placeholder">
+                        <div class="play-btn" onclick="this.parentElement.innerHTML='<iframe src=\'https://www.youtube.com/embed/9oVupFe_ZbA?autoplay=1&si=EcbkouukZYSvEDap\' frameborder=\'0\' allow=\'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\' allowfullscreen style=\'width:100%;height:100%;border:0;\'></iframe>'">
+                            <i class="fas fa-play" style="margin-left:3px"></i>
+                        </div>
+                    </div>
+                    <div class="sermon-info">
+                        <div class="sermon-meta">
+                            <span><i class="fas fa-calendar"></i> May 11, 2026</span>
+                            <span><i class="fas fa-clock"></i> 75 min</span>
+                        </div>
+                        <h3>Faith That Moves Mountains</h3>
+                        <div class="sermon-preacher">Pastor JOHN EVEREST</div>
+                    <a href="https://www.youtube.com/watch?v=9oVupFe_ZbA" 
+                    class="sermon-btn" 
+                    data-video-id="9oVupFe_ZbA"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    <i class="fas fa-play-circle"></i> Watch Sermon
+                    </a>
+                    </div>
+                </div>
+
+                <div class="sermon-card reveal">
+                    <div class="sermon-video">
+                        <img src="the great faith 3.jpeg" alt="Sermon Thumbnail" class="sermon-video-placeholder">
+                        <div class="play-btn" onclick="this.parentElement.innerHTML='<iframe src=\'https://www.youtube.com/embed/4IcrQ7AJNc4?autoplay=1&si=EcbkouukZYSvEDap\' frameborder=\'0\' allow=\'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\' allowfullscreen style=\'width:100%;height:100%;border:0;\'></iframe>'">
+                            <i class="fas fa-play" style="margin-left:3px"></i>
+                        </div>
+                    </div>
+                    <div class="sermon-info">
+                        <div class="sermon-meta">
+                            <span><i class="fas fa-calendar"></i> May 4, 2026</span>
+                            <span><i class="fas fa-clock"></i> 38 min</span>
+                        </div>
+                        <h3>Greater Love Has No Man</h3>
+                        <div class="sermon-preacher">Pastor JOHN EVEREST</div>
+                    <a href="https://www.youtube.com/watch?v=4IcrQ7AJNc4" 
+                    class="sermon-btn" 
+                    data-video-id="4IcrQ7AJNc4"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    <i class="fas fa-play-circle"></i> Watch Sermon
+                    </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center" style="margin-top: 48px;">
+                <a href="https://youtube.com/@prestigeworshippersministr1033" target="_blank" class="btn btn-primary">
+                    <i class="fab fa-youtube"></i> View All Sermons on YouTube
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         EVENTS SECTION
+         ============================================ -->
+    <section class="section section-dark" id="events">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-label">What's Coming</div>
+                <h2 class="section-title">Upcoming Events</h2>
+                <p class="section-subtitle">Be part of exciting events and gatherings that will strengthen your faith and community.</p>
+            </div>
+
+            <div class="events-grid">
+                <div class="event-card reveal">
+                    <div class="event-date">
+                        <div class="event-date-box">
+                            <span class="day">28</span>
+                            <span class="month">Jun</span>
+                        </div>
+                        <div class="event-date-info">
+                            <div class="month-year">June 2026</div>
+                        </div>
+                    </div>
+                    <h3>Three Years Anniversary</h3>
+                    <p>Celebrating three years of God's faithfulness with thanksgiving, worship, and testimonies.</p>
+                    <a href="https://wa.me/256783577649?text=Hi%20there%2C%20I%20just%20visited%20your%20website%20and%20I%20am%20really%20interested%20in%20the%20upcoming%20CHURCH%20ANNIVERSARY%20event.%0ACould%20you%20share%20the%20date%2C%20time%2C%20and%20venue%20with%20me%3F%20I%E2%80%99d%20love%20to%20know%20how%20I%20can%20join%20in%20or%20support.%0ALooking%20forward%20to%20connecting%20with%20you.%20God%20bless%21" class="event-link" target="_blank" rel="noopener noreferrer">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="event-card reveal">
+                    <div class="event-date">
+                        <div class="event-date-box">
+                            <span class="day">11</span>
+                            <span class="month">Jul</span>
+                        </div>
+                        <div class="event-date-info">
+                            <div class="month-year">July 2026</div>
+                        </div>
+                    </div>
+                    <h3>Ministers Team Building Day</h3>
+                    <p>A special day dedicated to equipping, refreshing, and building stronger bonds among our ministry team.</p>
+                    <a href="https://wa.me/256783577649?text=Hi%20there%2C%20I%20just%20visited%20your%20website%20and%20I%20am%20really%20interested%20in%20the%20upcoming%20MINISTERS%20TEAM%20BUILDING%20DAY%20event.%0ACould%20you%20share%20the%20date%2C%20time%2C%20and%20venue%20with%20me%3F%20I%E2%80%99d%20love%20to%20know%20how%20I%20can%20join%20in%20or%20support.%0ALooking%20forward%20to%20connecting%20with%20you.%20God%20bless%21" class="event-link" target="_blank" rel="noopener noreferrer">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="event-card reveal">
+                    <div class="event-date">
+                        <div class="event-date-box">
+                            <span class="day">9</span>
+                            <span class="month">Aug</span>
+                        </div>
+                        <div class="event-date-info">
+                            <div class="month-year">August 2026</div>
+                        </div>
+                    </div>
+                    <h3>Men's Sunday Service</h3>
+                    <p>A powerful service dedicated to men of valor — encouraging, equipping, and empowering men of God.</p>
+                    <a href="https://wa.me/256783577649?text=Hi%20there%2C%20I%20just%20visited%20your%20website%20and%20I%20am%20really%20interested%20in%20the%20upcoming%20MENS'%20SUNDAY%20SERVICE%20event.%0ACould%20you%20share%20the%20date%2C%20time%2C%20and%20venue%20with%20me%3F%20I%E2%80%99d%20love%20to%20know%20how%20I%20can%20join%20in%20or%20support.%0ALooking%20forward%20to%20connecting%20with%20you.%20God%20bless%21" class="event-link" target="_blank" rel="noopener noreferrer">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="event-card reveal">
+                    <div class="event-date">
+                        <div class="event-date-box">
+                            <span class="day">16</span>
+                            <span class="month">Aug</span>
+                        </div>
+                        <div class="event-date-info">
+                            <div class="month-year">August 2026</div>
+                        </div>
+                    </div>
+                    <h3>Thanksgiving Service</h3>
+                    <p>A heartfelt service of gratitude, praise, and thanksgiving for all that God has done in our lives.</p>
+                    <a href="https://wa.me/256783577649?text=Hi%20there%2C%20I%20just%20visited%20your%20website%20and%20I%20am%20really%20interested%20in%20the%20upcoming%20THANKSGIVING%20SUNDAY%20SERVICE%20event.%0ACould%20you%20share%20the%20date%2C%20time%2C%20and%20venue%20with%20me%3F%20I%E2%80%99d%20love%20to%20know%20how%20I%20can%20join%20in%20or%20support.%0ALooking%20forward%20to%20connecting%20with%20you.%20God%20bless%21" class="event-link" target="_blank" rel="noopener noreferrer">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="event-card reveal">
+                    <div class="event-date">
+                        <div class="event-date-box">
+                            <span class="day">30</span>
+                            <span class="month">Aug</span>
+                        </div>
+                        <div class="event-date-info">
+                            <div class="month-year">August 2026</div>
+                        </div>
+                    </div>
+                    <h3>Youth Gala</h3>
+                    <p>An exciting night of worship, fellowship, and fun — designed specifically for the youth of Prestige Worshippers.</p>
+                     <a href="https://wa.me/256783577649?text=Hi%20there%2C%20I%20just%20visited%20your%20website%20and%20I%20am%20really%20interested%20in%20the%20upcoming%20YOUTH%20GALA%20CHURCH%20event.%0ACould%20you%20share%20the%20date%2C%20time%2C%20and%20venue%20with%20me%3F%20I%E2%80%99d%20love%20to%20know%20how%20I%20can%20join%20in%20or%20support.%0ALooking%20forward%20to%20connecting%20with%20you.%20God%20bless%21" class="event-link" target="_blank" rel="noopener noreferrer">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="event-card reveal">
+                    <div class="event-date">
+                        <div class="event-date-box">
+                            <span class="day">6</span>
+                            <span class="month">Sep</span>
+                        </div>
+                        <div class="event-date-info">
+                            <div class="month-year">September 2026</div>
+                        </div>
+                    </div>
+                    <h3>Children's Sunday Service</h3>
+                    <p>A special service designed for our little ones — fun, engaging, and filled with God's love.</p>
+                    <a href="https://wa.me/256783577649?text=Hi%20there%2C%20I%20just%20visited%20your%20website%20and%20I%20am%20really%20interested%20in%20the%20upcoming%20CHILDRENS'S%20SUNDAY%20SERVICE%20event.%0ACould%20you%20share%20the%20date%2C%20time%2C%20and%20venue%20with%20me%3F%20I%E2%80%99d%20love%20to%20know%20how%20I%20can%20join%20in%20or%20support.%0ALooking%20forward%20to%20connecting%20with%20you.%20God%20bless%21" class="event-link" target="_blank" rel="noopener noreferrer">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="event-card reveal">
+                    <div class="event-date">
+                        <div class="event-date-box">
+                            <span class="day">13</span>
+                            <span class="month">Sep</span>
+                        </div>
+                        <div class="event-date-info">
+                            <div class="month-year">September 2026</div>
+                        </div>
+                    </div>
+                    <h3>Women's Sunday Service</h3>
+                    <p>An empowering service celebrating the grace, strength, and beauty of women in the kingdom.</p>
+                    <a href="https://wa.me/256783577649?text=Hi%20there%2C%20I%20just%20visited%20your%20website%20and%20I%20am%20really%20interested%20in%20the%20upcoming%20WOMEN'S%20SUNDAY%20SERVICE%20event.%0ACould%20you%20share%20the%20date%2C%20time%2C%20and%20venue%20with%20me%3F%20I%E2%80%99d%20love%20to%20know%20how%20I%20can%20join%20in%20or%20support.%0ALooking%20forward%20to%20connecting%20with%20you.%20God%20bless%21" class="event-link" target="_blank" rel="noopener noreferrer">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="event-card reveal">
+                    <div class="event-date">
+                        <div class="event-date-box">
+                            <span class="day">8</span>
+                            <span class="month">Nov</span>
+                        </div>
+                        <div class="event-date-info">
+                            <div class="month-year">November 2026</div>
+                        </div>
+                    </div>
+                    <h3>Worshippers Experience</h3>
+                    <p>An immersive worship experience — a night of deep encounter, praise, and spiritual refreshment.</p>
+                    <a href="https://wa.me/256783577649?text=Hi%20there%2C%20I%20just%20visited%20your%20website%20and%20I%20am%20really%20interested%20in%20the%20upcoming%20WORSHIPPERS%20EXPERIENCE%20event.%0ACould%20you%20share%20the%20date%2C%20time%2C%20and%20venue%20with%20me%3F%20I%E2%80%99d%20love%20to%20know%20how%20I%20can%20join%20in%20or%20support.%0ALooking%20forward%20to%20connecting%20with%20you.%20God%20bless%21" class="event-link" target="_blank" rel="noopener noreferrer">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="event-card reveal">
+                    <div class="event-date">
+                        <div class="event-date-box">
+                            <span class="day">6</span>
+                            <span class="month">Dec</span>
+                        </div>
+                        <div class="event-date-info">
+                            <div class="month-year">December 2026</div>
+                        </div>
+                    </div>
+                    <h3>Thanksgiving Service</h3>
+                    <p>Closing the year with a powerful service of gratitude and praise for God's abundant blessings.</p>
+                    <a href="https://wa.me/256783577649?text=Hi%20there%2C%20I%20just%20visited%20your%20website%20and%20I%20am%20really%20interested%20in%20the%20upcoming%20THANKSGIVING%20SERVICE%20event.%0ACould%20you%20share%20the%20date%2C%20time%2C%20and%20venue%20with%20me%3F%20I%E2%80%99d%20love%20to%20know%20how%20I%20can%20join%20in%20or%20support.%0ALooking%20forward%20to%20connecting%20with%20you.%20God%20bless%21" class="event-link" target="_blank" rel="noopener noreferrer">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="event-card reveal">
+                    <div class="event-date">
+                        <div class="event-date-box">
+                            <span class="day">20</span>
+                            <span class="month">Dec</span>
+                        </div>
+                        <div class="event-date-info">
+                            <div class="month-year">December 2026</div>
+                        </div>
+                    </div>
+                    <h3>Secret Santa Service</h3>
+                    <p>A heartwarming Christmas service filled with love, giving in which we share gifts, and the joy of the season.</p>
+                    <a href="https://wa.me/256783577649?text=Hi%20there%2C%20I%20just%20visited%20your%20website%20and%20I%20am%20really%20interested%20in%20the%20upcoming%20SECRET%20SANTA%20SERVICE%20event.%0ACould%20you%20share%20the%20date%2C%20time%2C%20and%20venue%20with%20me%3F%20I%E2%80%99d%20love%20to%20know%20how%20I%20can%20join%20in%20or%20support.%0ALooking%20forward%20to%20connecting%20with%20you.%20God%20bless%21" class="event-link" target="_blank" rel="noopener noreferrer">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         MINISTRIES SECTION
+         ============================================ -->
+    <section class="section section-light" id="ministries">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-label">Get Involved</div>
+                <h2 class="section-title">Our Ministries</h2>
+                <p class="section-subtitle">Discover the various ways you can connect, serve, and grow within our church family.</p>
+            </div>
+
+            <div class="ministries-grid">
+                <div class="ministry-card reveal">
+                    <div class="ministry-img">
+                        <img src="men.jpeg" alt="Men's Ministry">
+                    </div>
+                    <div class="ministry-content">
+                        <div class="ministry-icon"><i class="fas fa-male"></i></div>
+                        <h3>Men's Ministry</h3>
+                        <p>Empowering men to be strong leaders, loving husbands, and faithful fathers through the Word.</p>
+                    </div>
+                </div>
+
+                <div class="ministry-card reveal">
+                    <div class="ministry-img">
+                        <img src="women.jpeg" alt="Women's Ministry">
+                    </div>
+                    <div class="ministry-content">
+                        <div class="ministry-icon"><i class="fas fa-female"></i></div>
+                        <h3>Women's Ministry</h3>
+                        <p>Building women of faith, virtue, and purpose through fellowship, prayer, and the Word.</p>
+                    </div>
+                </div>
+
+                <div class="ministry-card reveal">
+                    <div class="ministry-img">
+                        <img src="youth1.jpeg" alt="Youth Ministry">
+                    </div>
+                    <div class="ministry-content">
+                        <div class="ministry-icon"><i class="fas fa-users"></i></div>
+                        <h3>Youth Ministry</h3>
+                        <p>Equipping young people to live boldly for Christ in every area of their lives.</p>
+                    </div>
+                </div>
+
+                <div class="ministry-card reveal">
+                    <div class="ministry-img">
+                        <img src="children1.jpeg" alt="Children's Ministry">
+                    </div>
+                    <div class="ministry-content">
+                        <div class="ministry-icon"><i class="fas fa-child"></i></div>
+                        <h3>Children's Ministry</h3>
+                        <p>Nurturing young hearts with the love of God through creative and engaging programs.</p>
+                    </div>
+                </div>
+
+                <div class="ministry-card reveal">
+                    <div class="ministry-img">
+                        <img src="sherry1.jpeg" alt="Worship Team">
+                    </div>
+                    <div class="ministry-content">
+                        <div class="ministry-icon"><i class="fas fa-guitar"></i></div>
+                        <h3>Worship Team</h3>
+                        <p>Leading the congregation into God's presence through anointed music and praise.</p>
+                    </div>
+                </div>
+
+                <div class="ministry-card reveal">
+                    <div class="ministry-img">
+                        <img src="prayer.jpeg" alt="Prayer Ministry">
+                    </div>
+                    <div class="ministry-content">
+                        <div class="ministry-icon"><i class="fas fa-pray"></i></div>
+                        <h3>Prayer Ministry</h3>
+                        <p>Standing in the gap through intercession, prayer chains, and spiritual warfare.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         GALLERY SECTION
+         ============================================ -->
+    <section class="section" id="gallery">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-label">Our Moments</div>
+                <h2 class="section-title">Photo Gallery</h2>
+                <p class="section-subtitle">Glimpses of worship, fellowship, and transformation at Prestige Worshippers Ministry.</p>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item reveal">
+                    <img src="people1.jpeg" alt="Worship Service">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-expand"></i>
+                        <span>Sunday Worship Service</span>
+                    </div>
+                </div>
+                <div class="gallery-item reveal">
+                    <img src="praise.jpeg" alt="Worship Band">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-expand"></i>
+                        <span>Praise & Worship</span>
+                    </div>
+                </div>
+                <div class="gallery-item reveal">
+                    <img src="people6.jpeg" alt="Prayer Session">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-expand"></i>
+                        <span>Prayer Night</span>
+                    </div>
+                </div>
+                <div class="gallery-item reveal">
+                    <img src="youth2.jpeg" alt="Youth Fellowship">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-expand"></i>
+                        <span>Youth Fellowship</span>
+                    </div>
+                </div>
+                <div class="gallery-item reveal">
+                    <img src="people5.jpeg" alt="Community Outreach">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-expand"></i>
+                        <span>Community Outreach</span>
+                    </div>
+                </div>
+                <div class="gallery-item reveal">
+                    <img src="word.jpeg" alt="Church Building">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-expand"></i>
+                        <span>Our Church Home</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         TESTIMONIALS SECTION
+         ============================================ -->
+    <section class="section section-dark" id="testimonials">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-label">Hear From Us</div>
+                <h2 class="section-title">What Members Say</h2>
+                <p class="section-subtitle">Real stories of transformation and faith from our church family.</p>
+            </div>
+
+            <div class="testimonials-wrapper reveal">
+                <div class="testimonials-track" id="testimonialsTrack">
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">"Prestige Worshippers Ministry changed my life. The love, care, and genuine community I found here is unlike anything I've experienced. I grew from a seeker to a passionate worshipper."</p>
+                            <div class="testimonial-author">
+                                <div class="testimonial-avatar"><img src="SHERRY.jpeg" alt="sister sherry"></div>
+                                <div class="testimonial-info">
+                                    <h4>Sister Sherry</h4>
+                                    <span>Member since 2024</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">"The Word preached here is powerful and life-changing. I've seen my family transformed, my marriage restored, and my faith strengthened. This ministry is truly anointed."</p>
+                            <div class="testimonial-author">
+                                <div class="testimonial-avatar"><img src="GODON.jpeg" alt="brother godon"></div>
+                                <div class="testimonial-info">
+                                    <h4>Brother Godon</h4>
+                                    <span>Member since 2025</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">"As a young person, I found purpose and direction here. The youth ministry empowered me to pursue my dreams while staying rooted in Christ. I'm forever grateful."</p>
+                            <div class="testimonial-author">
+                                <div class="testimonial-avatar"><img src="anthony.jpg" alt="baguma anthony"></div>
+                                <div class="testimonial-info">
+                                    <h4>Baguma Anthony</h4>
+                                    <span>Youth Ministry Leader</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">"The prayer ministry at Prestige Worshippers is incredible. Through their prayers and support, I received a miracle that doctors said was impossible. God is so faithful!"</p>
+                            <div class="testimonial-author">
+                                <div class="testimonial-avatar"><img src="KWAGALA.jpeg" alt="sister kwagala"></div>
+                                <div class="testimonial-info">
+                                    <h4>Sister Kwagala</h4>
+                                    <span>Member since 2025</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonials-nav">
+                    <button onclick="moveTestimonial(-1)" aria-label="Previous testimonial"><i class="fas fa-chevron-left"></i></button>
+                    <button onclick="moveTestimonial(1)" aria-label="Next testimonial"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="testimonials-dots" id="testimonialDots">
+                    <div class="dot active" onclick="goToTestimonial(0)"></div>
+                    <div class="dot" onclick="goToTestimonial(1)"></div>
+                    <div class="dot" onclick="goToTestimonial(2)"></div>
+                    <div class="dot" onclick="goToTestimonial(3)"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         CTA SECTION
+         ============================================ -->
+    <section class="cta-section">
+        <div class="cta-bg"></div>
+        <div class="cta-overlay"></div>
+        <div class="container">
+            <div class="cta-content reveal">
+                <div class="section-label">You're Invited</div>
+                <h2>Come Worship With Us</h2>
+                <p>Experience the life-transforming power of God's presence. No matter where you are in your journey, there's a place for you at Prestige Worshippers Ministry. Come as you are — leave transformed.</p>
+                <div class="cta-buttons">
+                 <a href="https://wa.me/256783577649?text=how%20best%20can%20i%20join%20PRESTIGE%20WORSHIPPERS%20MINISTRY%20and%20be%20part%20of%20the%20family%20please?" 
+                    class="btn btn-primary" 
+                    target="_blank" 
+                    rel="noopener noreferrer">
+                    Plan Your Visit
+                    </a>
+                    <a href="https://youtube.com/@prestigeworshippersministr1033" target="_blank" class="btn btn-outline">
+                        <i class="fab fa-youtube"></i> View All Sermons
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         CONTACT SECTION
+         ============================================ -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-label">Get In Touch</div>
+                <h2 class="section-title">Contact Us</h2>
+                <p class="section-subtitle">We'd love to hear from you. Reach out to us through any of the channels below.</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info reveal-left">
+                    <h3>Let's Connect</h3>
+                    <p>Whether you have a question, need prayer, want to visit, or are looking for a church home — we're here for you. Don't hesitate to reach out.</p>
+
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-item-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="contact-item-text">
+                                <h4>Email Us</h4>
+                                <a href="mailto:prestigeworshippersministry@gmail.com">prestigeworshippersministry@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-item-icon"><i class="fas fa-phone"></i></div>
+                            <div class="contact-item-text">
+                                <h4>Call Us</h4>
+                                <a href="tel:+256783577649">+256 783 577 649</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-item-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="contact-item-text">
+                                <h4>Visit Us</h4>
+                                <p>Kirinya, Bweyogerere, Uganda Just after STABEX petrol station on kirinya bukasa road</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-item-icon"><i class="fas fa-clock"></i></div>
+                            <div class="contact-item-text">
+                                <h4>Office Hours</h4>
+                                <p>Monday – Friday: 9:00 AM – 5:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-social">
+                        <a href="https://facebook.com/prestigeworshippersministry" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com/prestigeworshippersministry" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://youtube.com/@prestigeworshipper1033" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://tiktok.com/@prestigeworshippers" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://twitter.com/JohnEveres83464?s=20" target="_blank" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper reveal-right">
+                    <h3>Send Us a Message</h3>
+                    <form id="contactForm" onsubmit="handleFormSubmit(event)">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <input type="text" id="firstName" name="firstName" placeholder="Your first name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" id="lastName" name="lastName" placeholder="Your last name" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="username@gmail.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+256 783 577 649">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" name="subject">
+                                <option value="">Select a subject</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="prayer">Prayer Request</option>
+                                <option value="visit">Plan a Visit</option>
+                                <option value="volunteer">Volunteer / Join a Ministry</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="How can we help you?" required></textarea>
+                        </div>
+                        <button type="submit" class="form-submit">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="map-container map-placeholder reveal">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.753060041471!2d32.67190887398408!3d0.32770736401054873!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177db930ce7d87f3%3A0x8f0a8639b8e43973!2sPRESTIGE%20WORSHIPPERS%20MINISTRY!5e0!3m2!1sen!2sug!4v1779819778939!5m2!1sen!2sug" 
+                        width="600" 
+                        height="450" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="nav-logo" style="margin-bottom: 8px;">
+                        <div class="logo-icon">
+                        <img src="logo.png" alt="Church Logo" class="nav-logo">
+                    </div>
+                        <div class="logo-text">
+                            <span class="church-name">PRESTIGE WORSHIPPERS</span>
+                            <span class="church-tagline" style="color: var(--gold);">Love • Care • Transform</span>
+                        </div>
+                    </div>
+                    <p>A Spirit-filled community dedicated to raising passionate worshippers and transforming lives through the power of God's Word. Everyone is welcome.</p>
+                    <div class="footer-social">
+                        <a href="https://facebook.com/prestigeworshippersministry" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com/prestigeworshippersministry" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://youtube.com/@prestigeworshippersministr1033" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://tiktok.com/@prestigeworshippers" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://twitter.com/JohnEveres83464?s=20" target="_blank" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4>Quick Links</h4>
+                    <div class="footer-links">
+                        <a href="#home">Home</a>
+                        <a href="#about">About Us</a>
+                        <a href="#services">Service Times</a>
+                        <a href="#sermons">Sermons</a>
+                        <a href="#events">Events</a>
+                        <a href="#ministries">Ministries</a>
+                        <a href="#gallery">Gallery</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4>Ministries</h4>
+                    <div class="footer-links">
+                        <a href="#ministries">Men's Ministry</a>
+                        <a href="#ministries">Women's Ministry</a>
+                        <a href="#ministries">Youth Ministry</a>
+                        <a href="#ministries">Children's Ministry</a>
+                        <a href="#ministries">Worship Team</a>
+                        <a href="#ministries">Prayer Ministry</a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4>Contact Info</h4>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:prestigeworshippersministry@gmail.com">prestigeworshippersministry<br>@gmail.com</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+256783577649">+256 783 577 649</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Kirinya, Bweyogerere, Uganda <br>kirinya bukasa road after STABEX petrol station</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Sun: 8AM – 1PM<br>Tue & Thu: 6PM – 8PM</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Prestige Worshippers Ministry. All rights reserved.</p>
+                <div class="theme-statement">Love • Care • Transform</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================
+         BACK TO TOP BUTTON
+         ============================================ -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- ============================================
+         JAVASCRIPT
+         ============================================ -->
+    <script>
+        // ============================================
+        // PRELOADER
+        // ============================================
+        window.addEventListener('load', function() {
+            const preloader = document.getElementById('preloader');
+            setTimeout(function() {
+                preloader.classList.add('hidden');
+            }, 1500);
+        });
+
+        // ============================================
+        // HERO PARTICLES
+        // ============================================
+        (function createParticles() {
+            const container = document.getElementById('heroParticles');
+            for (let i = 0; i < 30; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDuration = (Math.random() * 10 + 8) + 's';
+                particle.style.animationDelay = (Math.random() * 10) + 's';
+                particle.style.width = (Math.random() * 3 + 1) + 'px';
+                particle.style.height = particle.style.width;
+                particle.style.opacity = Math.random() * 0.5 + 0.1;
+                container.appendChild(particle);
+            }
+        })();
+
+        // ============================================
+        // STICKY NAVBAR SCROLL EFFECT
+        // ============================================
+        const navbar = document.getElementById('navbar');
+        const backToTop = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', function() {
+            const scrollY = window.scrollY;
+
+            if (scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+
+            if (scrollY > 500) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ============================================
+        // MOBILE NAVIGATION
+        // ============================================
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+        const navOverlay = document.getElementById('navOverlay');
+
+        function toggleMenu() {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('open');
+            navOverlay.classList.toggle('active');
+            document.body.style.overflow = navMenu.classList.contains('open') ? 'hidden' : '';
+        }
+
+        hamburger.addEventListener('click', toggleMenu);
+        navOverlay.addEventListener('click', toggleMenu);
+
+        navMenu.querySelectorAll('a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                if (navMenu.classList.contains('open')) {
+                    toggleMenu();
+                }
+            });
+        });
+
+        // ============================================
+        // ACTIVE NAV LINK ON SCROLL
+        // ============================================
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-menu a:not(.nav-cta)');
+
+        window.addEventListener('scroll', function() {
+            let current = '';
+            sections.forEach(function(section) {
+                const sectionTop = section.offsetTop - 120;
+                if (window.scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(function(link) {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // ============================================
+        // SCROLL REVEAL ANIMATIONS
+        // ============================================
+        function revealOnScroll() {
+            const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+            reveals.forEach(function(el) {
+                const windowHeight = window.innerHeight;
+                const elementTop = el.getBoundingClientRect().top;
+                const revealPoint = 120;
+
+                if (elementTop < windowHeight - revealPoint) {
+                    el.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+
+        // ============================================
+        // TESTIMONIALS SLIDER
+        // ============================================
+        let currentTestimonial = 0;
+        const track = document.getElementById('testimonialsTrack');
+        const totalSlides = document.querySelectorAll('.testimonial-slide').length;
+        const dots = document.querySelectorAll('.dot');
+
+        function updateTestimonial() {
+            track.style.transform = 'translateX(-' + (currentTestimonial * 100) + '%)';
+            dots.forEach(function(dot, index) {
+                dot.classList.toggle('active', index === currentTestimonial);
+            });
+        }
+
+        function moveTestimonial(direction) {
+            currentTestimonial = (currentTestimonial + direction + totalSlides) % totalSlides;
+            updateTestimonial();
+        }
+
+        function goToTestimonial(index) {
+            currentTestimonial = index;
+            updateTestimonial();
+        }
+
+        // Auto-slide testimonials
+        setInterval(function() {
+            moveTestimonial(1);
+        }, 6000);
+
+        // ============================================
+        // CONTACT FORM HANDLER
+        // ============================================
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const form = event.target;
+            const submitBtn = form.querySelector('.form-submit');
+            const originalText = submitBtn.innerHTML;
+
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+
+            setTimeout(function() {
+                submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
+                submitBtn.style.background = 'linear-gradient(135deg, #27ae60, #219a52)';
+
+                setTimeout(function() {
+                    form.reset();
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.style.background = '';
+                    submitBtn.disabled = false;
+                }, 3000);
+            }, 1500);
+        }
+
+        // ============================================
+        // SMOOTH SCROLL FOR ANCHOR LINKS
+        // ============================================
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const navHeight = navbar.offsetHeight;
+                    const targetPosition = targetElement.offsetTop - navHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // ============================================
+        // COUNTER ANIMATION (for about section)
+        // ============================================
+        let counterAnimated = false;
+
+        function animateCounter() {
+            if (counterAnimated) return;
+            const aboutSection = document.getElementById('about');
+            if (!aboutSection) return;
+            const rect = aboutSection.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                counterAnimated = true;
+                const numberEl = document.querySelector('.about-experience .number');
+                if (!numberEl) return;
+                const target = 3;
+                let current = 0;
+                const increment = 0.1;
+                const timer = setInterval(function() {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                        numberEl.textContent = target + '+';
+                    } else {
+                        numberEl.textContent = current.toFixed(1) + '+';
+                    }
+                }, 50);
+            }
+        }
+    
+                        document.addEventListener('DOMContentLoaded', function() {
+                        const reveals = document.querySelectorAll('.reveal');
+                         const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+                    }, { threshold: 0.1 });
+                    
+                    reveals.forEach(el => observer.observe(el));
+                });
+                        document.querySelector('a[href*="google.com/maps"]').addEventListener('click', function(e) {
+                    const timeout = setTimeout(() => {
+                        if (!document.hidden) { 
+                            alert('🗺️ Having trouble opening maps? Copy this address:\n\nPrestige Worshippers Ministry\nKireka Bweyogerere, Uganda\n\nOr search "Prestige Worshippers Ministry" in your maps app.');
+                        }
+                    }, 3000);
+    
+    window.addEventListener('blur', () => clearTimeout(timeout), { once: true });
+});
+        window.addEventListener('scroll', animateCounter);
+    </script>
+</body>
+</html>
+
