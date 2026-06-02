@@ -473,18 +473,29 @@
             transform: rotate(-45deg) translate(6px, -6px);
         }
         /* =========================================
-        MOBILE NAVBAR FIX - PASTE AT THE VERY END
+        FINAL BULLETPROOF MOBILE FIX
         ========================================= */
         @media (max-width: 992px) {
+            .top-header {
+                display: block !important;
+                visibility: visible !important;
+                height: auto !important;
+                position: fixed !important;
+                top: 0 !important;
+                left: 0 !important;
+                width: 100% !important;
+                z-index: 9998 !important;
+            }
             .navbar {
-                position: fixed !important; /* Forces it to stick on mobile */
-                width: 100%;
-                left: 0;
-                top: 0;
-                z-index: 9999; /* Keeps it above everything else */
+                position: fixed !important;
+                top: 70px !important; 
+                left: 0 !important;
+                width: 100% !important;
+                transform: translateY(0) !important;
+                z-index: 9999 !important;
             }
             .hero { 
-                margin-top: 80px !important; /* 80px matches your navbar height */
+                margin-top: 150px !important;
             }
         }
 
