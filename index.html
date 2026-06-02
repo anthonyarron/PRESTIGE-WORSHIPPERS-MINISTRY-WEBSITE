@@ -80,62 +80,70 @@
         /* ============================================
            PRELOADER
            ============================================ */
+        /* =========================================
+   PREMIUM CHURCH PRELOADER
+   ========================================= */
         .preloader {
             position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
+            inset: 0; 
             background: var(--navy);
             display: flex;
             align-items: center;
             justify-content: center;
             z-index: 99999;
-            transition: opacity 0.6s ease, visibility 0.6s ease;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
         }
 
         .preloader.hidden {
             opacity: 0;
             visibility: hidden;
+            pointer-events: none;
         }
 
         .preloader-content {
             text-align: center;
+            padding: 20px; 
         }
-
-        .preloader-cross {
-            font-size: 48px;
-            color: var(--red);
-            animation: pulse-loader 1.2s ease-in-out infinite;
-            display: flex;
-        }
-        .preloader-cross img {
-           width: 10%;
-           height: 10%;
-           object-fit: contain;
-           display: block;
-           justify-content: center;
-           display: block;
-           align-items: center;
-           background: transparent;  
-           margin-left: auto;
-           margin-right: auto; 
+        .preloader-logo {
+            width: 120px; 
+            max-width: 35vw; 
+            height: auto; 
+            display: block;
+            margin: 0 auto;
+            animation: sacred-pulse 2.5s ease-in-out infinite;
         }
 
         .preloader-text {
             font-family: var(--font-accent);
             color: var(--white);
-            font-size: 20px;
-            letter-spacing: 6px;
+            font-size: clamp(14px, 4vw, 20px); 
+            letter-spacing: clamp(2px, 1vw, 6px);
             text-transform: uppercase;
-            margin-top: 20px;
-            opacity: 0.7;
-            font-weight: bold;
+            margin-top: 24px;
+            opacity: 0.8;
+            font-weight: 600;
+            animation: fade-in-up 1s ease-out forwards;
         }
-
-        @keyframes pulse-loader {
-            0%, 100% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.2); opacity: 0.6; }
+        @keyframes sacred-pulse {
+            0%, 100% { 
+                transform: scale(1); 
+                filter: drop-shadow(0 0 0 rgba(230, 30, 35, 0)); 
+            }
+            50% { 
+                transform: scale(1.05); 
+                filter: drop-shadow(0 0 15px rgba(230, 30, 35, 0.4)); 
+            }
         }
-
+        @keyframes fade-in-up {
+            0% {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            100% {
+                opacity: 0.8;
+                transform: translateY(0);
+            }
+        }
         /* ============================================
            SCROLL REVEAL ANIMATIONS
            ============================================ */
@@ -2335,8 +2343,8 @@
          ============================================ -->
 <div class="preloader" id="preloader">
     <div class="preloader-content">
-        <div class="preloader-cross">
-            <img class="preloader-cross img" src="logo.png" alt="Church Logo">
+        <div class="preloader-logo-wrapper">
+            <img class="preloader-logo" src="logo.png" alt="Prestige Worshippers Ministry Logo">
         </div>
         <div class="preloader-text">Prestige Worshippers Ministry</div>
     </div>
